@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+  // Global Portal Security Guard
+    if (localStorage.getItem("oura_portal_auth") !== "unlocked") {
+      alert("🔒 System Restricted! Please enter the Passkey on the Security Gate first.");
+      window.location.href = "index.html";
+    }
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
