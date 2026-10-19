@@ -1,43 +1,52 @@
-// Function to Handle Advertiser Lead Form Submission
-function handleLeadSubmission(e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("advertiserForm");
+  if (!form) return;
 
-  var brandName = document.getElementById("brandName").value;
-  var brandEmail = document.getElementById("brandEmail").value;
-  var service = document.getElementById("selectedService").value;
-  var projectBrief = document.getElementById("projectBrief").value;
-  var successAlert = document.getElementById("successAlert");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  if (!brandName || !brandEmail) {
-    alert("Please fill in all required fields.");
-    return;
-  }
+    const name = document.getElementById("clientName").value;
+    const email = document.getElementById("clientEmail").value;
+    const brand = document.getElementById("clientBrand").value;
+    const goal = document.getElementById("clientGoal").value;
+    const resultBox = document.getElementById("bookingResult");
+    const submitBtn = document.getElementById("submitLeadBtn");
 
-  // Active n8n Webhook Request
-  fetch('http://localhost:5678/webhook-test/media-lead', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      brandName: brandName,
-      brandEmail: brandEmail,
-      selectedService: service,
-      projectBrief: projectBrief
-    })
-  })
-  .then(response => {
-    console.log("Lead successfully sent to n8n workflow!");
-  })
-  .catch(error => {
-    console.error("Error sending lead:", error);
+    // UI Loading State
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Processing Lead...";
+    resultBox.classList.remove("hidden");
+    resultBox.innerHTML = "<p class='text-slate-400 animate-pulse'>⚡ Transmitting campaign request to n8n workflow engine...</p>";
+
+    try {
+      // Replace with your actual n8n lead Webhook URL
+      const response = await fetch("YOUR_N8N_WEBHOOK_URL_HERE", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          brand: brand,
+          goal: goal,
+          submitted_at: new Date().toISOString()
+        })
+      });
+
+      if (response.ok) {
+        resultBox.innerHTML = `
+          <h4 class="text-emerald-400 font-bold mb-1">✓ Campaign Submitted Successfully!</h4>
+          <p class="text-slate-300 text-sm">Your details have been logged and our automation has triggered successfully.</p>
+        `;
+        form.reset();
+      } else {
+        resultBox.innerHTML = "<p class='text-red-400'>❌ Submission failed. Please verify n8n webhook status.</p>";
+      }
+    } catch (error) {
+      console.error(error);
+      resultBox.innerHTML = "<p class='text-red-400'>❌ Connection error! Please check network or webhook endpoint.</p>";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Submit Campaign Request";
+    }
   });
-
-  // Show Success Alert
-  if (successAlert) {
-    successAlert.classList.remove("hidden");
-  }
-
-  // Reset Form
-  document.getElementById("leadForm").reset();
-}
+});
