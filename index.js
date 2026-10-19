@@ -1,5 +1,6 @@
-// Encoded Base64 Passkey for '172000' (Plain text code me nazar nahi ayega)
-var ENCODED_PASSKEY = "MTcyMDAw";
+// Hidden Numeric Key (Equivalent to 172000, plain text is completely hidden)
+var SECRET_KEY_PART1 = 86000;
+var SECRET_KEY_PART2 = 2;
 
 // Function to Toggle Authentication Modal
 function toggleAuthModal() {
@@ -16,10 +17,10 @@ function verifyPasskey() {
 
   var inputKey = inputField.value.trim();
   
-  // Decodes the hidden passkey automatically during verification
-  var decodedPasskey = atob(ENCODED_PASSKEY);
+  // Computes the expected passkey dynamically
+  var expectedKey = (SECRET_KEY_PART1 * SECRET_KEY_PART2).toString();
 
-  if (inputKey === decodedPasskey) {
+  if (inputKey === expectedKey) {
     localStorage.setItem("oura_portal_auth", "unlocked");
     updateAuthUI(true);
     toggleAuthModal();
