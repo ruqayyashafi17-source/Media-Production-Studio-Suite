@@ -14,7 +14,7 @@ function verifyPasskey() {
   var inputField = document.getElementById("passkeyInput");
   if (!inputField) return;
 
-  var inputKey = inputField.value;
+  var inputKey = inputField.value.trim();
   if (inputKey === MASTER_PASSKEY) {
     localStorage.setItem("oura_portal_auth", "unlocked");
     updateAuthUI(true);
@@ -48,6 +48,7 @@ function updateAuthUI(isUnlocked) {
       btn.onclick = function () {
         localStorage.removeItem("oura_portal_auth");
         updateAuthUI(false);
+        window.location.reload();
       };
     }
   } else {
