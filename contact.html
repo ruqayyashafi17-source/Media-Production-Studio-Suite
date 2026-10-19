@@ -38,13 +38,42 @@
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 py-8">
-    <h2 class="text-2xl font-bold text-white mb-2">Advertiser Booking Portal</h2>
-    <p class="text-sm text-slate-400 mb-6">Manage brand ad campaigns and automated lead processing.</p>
-    
-    <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl">
-      <p class="text-slate-300 text-sm">✓ Advertiser Portal Access Enabled.</p>
+  <!-- Main Content / Booking Form -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold tracking-tight text-white">Advertiser Campaign Booking</h2>
+      <p class="text-sm text-slate-400 mt-1">Submit your campaign details to launch your digital advertising workflow.</p>
     </div>
+
+    <!-- Advertiser Booking Form -->
+    <form id="advertiserForm" class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
+          <input type="text" id="clientName" required placeholder="Your Name" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+          <input type="email" id="clientEmail" required placeholder="name@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Brand Name / Agency</label>
+        <input type="text" id="clientBrand" required placeholder="Brand Name" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Campaign Goal / Services Needed</label>
+        <textarea id="clientGoal" rows="3" required placeholder="Describe your ad requirements..." class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500"></textarea>
+      </div>
+
+      <button type="submit" id="submitLeadBtn" class="w-full py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm rounded-lg transition">
+        Submit Campaign Request
+      </button>
+    </form>
+
+    <div id="bookingResult" class="mt-6 hidden p-6 bg-slate-900/60 border border-slate-800 rounded-2xl"></div>
   </main>
 
   <!-- External Contact Logic Script -->
