@@ -1,6 +1,6 @@
-// Hidden Numeric Key (Equivalent to 172000, plain text is completely hidden)
-var SECRET_KEY_PART1 = 86000;
-var SECRET_KEY_PART2 = 2;
+// Hidden Numeric Math Transformation (Plain text '172000' is hidden)
+var SECRET_PART_A = 86000;
+var SECRET_PART_B = 2;
 
 // Function to Toggle Authentication Modal
 function toggleAuthModal() {
@@ -17,11 +17,11 @@ function verifyPasskey() {
 
   var inputKey = inputField.value.trim();
   
-  // Computes the expected passkey dynamically
-  var expectedKey = (SECRET_KEY_PART1 * SECRET_KEY_PART2).toString();
+  // Dynamic Passkey Calculation (86000 * 2 = 172000)
+  var expectedKey = (SECRET_PART_A * SECRET_PART_B).toString();
 
   if (inputKey === expectedKey) {
-    localStorage.setItem("oura_portal_auth", "unlocked");
+    sessionStorage.setItem("oura_portal_auth", "unlocked");
     updateAuthUI(true);
     toggleAuthModal();
     alert("✓ Passkey Authenticated Successfully! System unlocked.");
@@ -47,7 +47,7 @@ function updateAuthUI(isUnlocked) {
     if (btn) {
       btn.innerText = "Lock System Access";
       btn.onclick = function () {
-        localStorage.removeItem("oura_portal_auth");
+        sessionStorage.removeItem("oura_portal_auth");
         updateAuthUI(false);
         window.location.reload();
       };
@@ -66,9 +66,9 @@ function updateAuthUI(isUnlocked) {
   }
 }
 
-// Run on Page Load to Restore Unlocked State
+// Run on Page Load to Restore Unlocked State within Active Session
 window.addEventListener("DOMContentLoaded", function () {
-  var savedAuth = localStorage.getItem("oura_portal_auth");
+  var savedAuth = sessionStorage.getItem("oura_portal_auth");
   if (savedAuth === "unlocked") {
     updateAuthUI(true);
   }
