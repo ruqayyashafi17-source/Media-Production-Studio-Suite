@@ -1,16 +1,7 @@
-// Encrypted SHA-256 Hash of Password 'OURA2026'
-var HASHED_PASSKEY = "2c5108f51a2d5e75128ff3e707b66df825b3068fbf173a11b7b054238e235d10";
+// Encoded Base64 Passkey for '172000' (Plain text code me nazar nahi ayega)
+var ENCODED_PASSKEY = "MTcyMDAw";
 
-// SHA-256 Hash Function
-async function hashString(string) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(string);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// Toggle Modal
+// Function to Toggle Authentication Modal
 function toggleAuthModal() {
   var modal = document.getElementById("authModal");
   if (modal) {
@@ -18,25 +9,27 @@ function toggleAuthModal() {
   }
 }
 
-// Verify Passkey
-async function verifyPasskey() {
+// Function to Verify Passkey
+function verifyPasskey() {
   var inputField = document.getElementById("passkeyInput");
   if (!inputField) return;
 
   var inputKey = inputField.value.trim();
-  var inputHash = await hashString(inputKey);
+  
+  // Decodes the hidden passkey automatically during verification
+  var decodedPasskey = atob(ENCODED_PASSKEY);
 
-  if (inputHash === HASHED_PASSKEY) {
+  if (inputKey === decodedPasskey) {
     localStorage.setItem("oura_portal_auth", "unlocked");
     updateAuthUI(true);
     toggleAuthModal();
-    alert("✓ System Authenticated & Unlocked! Access Granted to All Pages.");
+    alert("✓ Passkey Authenticated Successfully! System unlocked.");
   } else {
-    alert("❌ Access Denied! Incorrect Security Passkey.");
+    alert("❌ Incorrect Passkey! Access Denied.");
   }
 }
 
-// Update UI Badge
+// Function to Update Security Badge & UI Elements
 function updateAuthUI(isUnlocked) {
   var badge = document.getElementById("statusBadge");
   var dot = document.getElementById("dotIndicator");
@@ -72,7 +65,7 @@ function updateAuthUI(isUnlocked) {
   }
 }
 
-// Auto Check on Load
+// Run on Page Load to Restore Unlocked State
 window.addEventListener("DOMContentLoaded", function () {
   var savedAuth = localStorage.getItem("oura_portal_auth");
   if (savedAuth === "unlocked") {
