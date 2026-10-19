@@ -1,7 +1,16 @@
-// Master Passkey Definition
-var MASTER_PASSKEY = "OURA2026";
+// Encrypted SHA-256 Hash of Password 'OURA2026'
+var HASHED_PASSKEY = "2c5108f51a2d5e75128ff3e707b66df825b3068fbf173a11b7b054238e235d10";
 
-// Function to Toggle Authentication Modal
+// SHA-256 Hash Function
+async function hashString(string) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(string);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// Toggle Modal
 function toggleAuthModal() {
   var modal = document.getElementById("authModal");
   if (modal) {
@@ -9,23 +18,25 @@ function toggleAuthModal() {
   }
 }
 
-// Function to Verify Passkey
-function verifyPasskey() {
+// Verify Passkey
+async function verifyPasskey() {
   var inputField = document.getElementById("passkeyInput");
   if (!inputField) return;
 
   var inputKey = inputField.value.trim();
-  if (inputKey === MASTER_PASSKEY) {
+  var inputHash = await hashString(inputKey);
+
+  if (inputHash === HASHED_PASSKEY) {
     localStorage.setItem("oura_portal_auth", "unlocked");
     updateAuthUI(true);
     toggleAuthModal();
-    alert("✓ Passkey Authenticated Successfully! System unlocked.");
+    alert("✓ System Authenticated & Unlocked! Access Granted to All Pages.");
   } else {
-    alert("❌ Incorrect Passkey! Access Denied.");
+    alert("❌ Access Denied! Incorrect Security Passkey.");
   }
 }
 
-// Function to Update Security Badge & UI Elements
+// Update UI Badge
 function updateAuthUI(isUnlocked) {
   var badge = document.getElementById("statusBadge");
   var dot = document.getElementById("dotIndicator");
@@ -33,12 +44,8 @@ function updateAuthUI(isUnlocked) {
   var btn = document.getElementById("authBtn");
 
   if (isUnlocked) {
-    if (badge) {
-      badge.className = "flex items-center space-x-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full";
-    }
-    if (dot) {
-      dot.className = "w-2 h-2 rounded-full bg-emerald-500";
-    }
+    if (badge) badge.className = "flex items-center space-x-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full";
+    if (dot) dot.className = "w-2 h-2 rounded-full bg-emerald-500";
     if (label) {
       label.className = "text-xs font-semibold text-emerald-400";
       label.innerText = "System Unlocked";
@@ -52,12 +59,8 @@ function updateAuthUI(isUnlocked) {
       };
     }
   } else {
-    if (badge) {
-      badge.className = "flex items-center space-x-2 px-3 py-1.5 bg-red-500/10 border border-red-500/30 rounded-full";
-    }
-    if (dot) {
-      dot.className = "w-2 h-2 rounded-full bg-red-500 animate-pulse";
-    }
+    if (badge) badge.className = "flex items-center space-x-2 px-3 py-1.5 bg-red-500/10 border border-red-500/30 rounded-full";
+    if (dot) dot.className = "w-2 h-2 rounded-full bg-red-500 animate-pulse";
     if (label) {
       label.className = "text-xs font-semibold text-red-400";
       label.innerText = "System Locked";
@@ -69,7 +72,7 @@ function updateAuthUI(isUnlocked) {
   }
 }
 
-// Run on Page Load to Restore Unlocked State
+// Auto Check on Load
 window.addEventListener("DOMContentLoaded", function () {
   var savedAuth = localStorage.getItem("oura_portal_auth");
   if (savedAuth === "unlocked") {
