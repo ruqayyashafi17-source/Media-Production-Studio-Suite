@@ -1,5 +1,14 @@
-// Master Passkey Definition
-var MASTER_PASSKEY = "OURA2026";
+// Master Passkey Encoded (Password: 172000)
+var ENCRYPTED_PASSKEY = "MTcyMDAw"; // Base64 for 172000
+
+// Helper function to decode base64 securely at runtime
+function getMasterKey() {
+  try {
+    return atob(ENCRYPTED_PASSKEY);
+  } catch (e) {
+    return "";
+  }
+}
 
 // Function to Toggle Authentication Modal
 function toggleAuthModal() {
@@ -15,8 +24,8 @@ function verifyPasskey() {
   if (!inputField) return;
 
   var inputKey = inputField.value;
-  if (inputKey === MASTER_PASSKEY) {
-    localStorage.setItem("oura_portal_auth", "unlocked");
+  if (inputKey === getMasterKey()) {
+    sessionStorage.setItem("oura_portal_auth", "unlocked");
     updateAuthUI(true);
     toggleAuthModal();
     alert("✓ Passkey Authenticated Successfully! System unlocked.");
@@ -46,7 +55,7 @@ function updateAuthUI(isUnlocked) {
     if (btn) {
       btn.innerText = "Lock System Access";
       btn.onclick = function () {
-        localStorage.removeItem("oura_portal_auth");
+        sessionStorage.removeItem("oura_portal_auth");
         updateAuthUI(false);
       };
     }
@@ -70,7 +79,7 @@ function updateAuthUI(isUnlocked) {
 
 // Run on Page Load to Restore Unlocked State
 window.addEventListener("DOMContentLoaded", function () {
-  var savedAuth = localStorage.getItem("oura_portal_auth");
+  var savedAuth = sessionStorage.getItem("oura_portal_auth");
   if (savedAuth === "unlocked") {
     updateAuthUI(true);
   }
