@@ -14,7 +14,7 @@ async function generateAIScript() {
 
   try {
     // Yahan apna actual n8n Webhook URL paste karein jo Gemini AI node se connected ho
-    var response = await fetch("YOUR_N8N_AI_WEBHOOK_URL_HERE", {
+    var response = await fetch("http://localhost:5678/webhook/script-generator", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
