@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Media Studio & Operations Suite | AI Scriptwriter & Rate Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="glass sticky top-0 z-50 px-8 py-4 flex justify-between items-center border-b border-slate-800">
+    <div class="flex items-center space-x-4">
+      <div class="p-2.5 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/20">
+        <i class="fa-solid fa-clapperboard text-white text-xl"></i>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold tracking-tight text-white">AI Media Studio Suite</h1>
+        <p class="text-xs text-blue-400 font-medium">AI Scriptwriter & Rate Calculator</p>
+      </div>
+    </div>
+
+    <!-- NAV LINKS -->
+    <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold text-slate-300">
+      <a href="index.html" class="hover:text-blue-400 transition">Security Gate</a>
+      <a href="dashboard.html" class="hover:text-blue-400 transition">Tool Hub</a>
+      <a href="operations.html" class="hover:text-blue-400 transition">Operations & Staff</a>
+      <a href="ai-tools.html" class="text-blue-400 border-b-2 border-blue-500 pb-1">AI Script & Rates</a>
+      <a href="contact.html" class="hover:text-blue-400 transition">Advertiser Portal</a>
+    </nav>
+
+    <!-- STATUS BADGE -->
+    <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-emerald-400">AI Engine Ready</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-12 my-auto w-full">
+
+    <div class="border-b border-slate-800 pb-6">
+      <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-xs font-bold uppercase tracking-widest">
+        Smart Automation Tools
+      </span>
+      <h2 class="text-3xl font-extrabold text-white tracking-tight mt-2">AI Commercial Script Generator & Rate Calculator</h2>
+      <p class="text-slate-400 text-xs mt-1">Generate professional TVC concepts and compute instant advertiser budgets.</p>
+    </div>
+
+    <!-- GRID: AI SCRIPTWRITER & RATE CALCULATOR -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- TOOL 1: AI SCRIPT GENERATOR -->
+      <div class="glass p-8 rounded-3xl border border-slate-800 space-y-6 flex flex-col justify-between">
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3">
+            <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl text-lg">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">AI TV Commercial Scriptwriter</h3>
+              <p class="text-xs text-slate-400">Powered by Gemini AI Engine</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Brand / Product Name</label>
+              <input type="text" id="scriptBrand" placeholder="e.g. Oura Energy Drink" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm focus:border-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Target Audience / Niche</label>
+              <input type="text" id="scriptAudience" placeholder="e.g. Youth, Tech Professionals, Families" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm focus:border-blue-500 outline-none">
+            </div>
+          </div>
+
+          <!-- OUTPUT BOX -->
+          <div class="space-y-2">
+            <label class="block text-xs font-semibold text-slate-300">Generated Script Output</label>
+            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 font-mono text-xs text-emerald-400 min-h-[140px] whitespace-pre-wrap overflow-y-auto" id="scriptOutput">
+// Click below to generate automated TV commercial concept script...
+            </div>
+          </div>
+        </div>
+
+        <button onclick="generateAIScript()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl transition text-xs shadow-lg shadow-blue-600/30">
+          <i class="fa-solid fa-bolt mr-2"></i>Generate Commercial Script
+        </button>
+      </div>
+
+      <!-- TOOL 2: RATE CARD CALCULATOR -->
+      <div class="glass p-8 rounded-3xl border border-slate-800 space-y-6 flex flex-col justify-between">
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3">
+            <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl text-lg">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Commercial Rate Estimator</h3>
+              <p class="text-xs text-slate-400">Dynamic slot booking budget calculation</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Select Media Service Package</label>
+              <select id="calcService" onchange="calculateRate()" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm outline-none text-slate-200">
+                <option value="1500">15-Second TV Commercial Slot ($1,500)</option>
+                <option value="2800">30-Second Prime Time Commercial ($2,800)</option>
+                <option value="4500">Show Sponsorship & Product Placement ($4,500)</option>
+                <option value="6000">Full Production & Digital Campaign ($6,000)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Campaign Duration (Weeks)</label>
+              <input type="number" id="calcWeeks" value="1" min="1" max="52" oninput="calculateRate()" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm outline-none">
+            </div>
+          </div>
+
+          <!-- ESTIMATE RESULT BOX -->
+          <div class="p-5 bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-blue-500/30 rounded-2xl space-y-1">
+            <span class="text-xs font-semibold text-blue-300">Estimated Total Investment:</span>
+            <div class="text-3xl font-extrabold text-white" id="totalEstimate">$1,500</div>
+            <p class="text-[10px] text-slate-400 pt-1">Includes broadcasting rights & standard post-production editing.</p>
+          </div>
+        </div>
+
+        <a href="contact.html" class="w-full block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl transition text-xs shadow-lg shadow-emerald-600/30">
+          <i class="fa-solid fa-paper-plane mr-2"></i>Proceed to Advertiser Booking Form
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-900 px-8 py-4 text-center text-xs text-slate-500 mt-12">
+    AI Media Studio & Operations Suite &copy; 2026. AI Tools & Calculator Module.
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="ai-tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Media Studio & Operations Suite | Protected Tool Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="glass sticky top-0 z-50 px-8 py-4 flex justify-between items-center border-b border-slate-800">
+    <div class="flex items-center space-x-4">
+      <div class="p-2.5 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/20">
+        <i class="fa-solid fa-clapperboard text-white text-xl"></i>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold tracking-tight text-white">AI Media Studio Suite</h1>
+        <p class="text-xs text-blue-400 font-medium">Protected Tool Hub</p>
+      </div>
+    </div>
+
+    <!-- NAV LINKS -->
+    <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold text-slate-300">
+      <a href="index.html" class="hover:text-blue-400 transition">Security Gate</a>
+      <a href="dashboard.html" class="text-blue-400 border-b-2 border-blue-500 pb-1">Tool Hub</a>
+      <a href="operations.html" class="hover:text-blue-400 transition">Operations & Staff</a>
+      <a href="ai-tools.html" class="hover:text-blue-400 transition">AI Script & Rates</a>
+      <a href="contact.html" class="hover:text-blue-400 transition">Advertiser Portal</a>
+    </nav>
+
+    <!-- STATUS BADGE -->
+    <div class="flex items-center space-x-4">
+      <div id="statusBadge" class="flex items-center space-x-2 px-3 py-1.5 bg-red-500/10 border border-red-500/30 rounded-full">
+        <span id="dotIndicator" class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-red-400" id="statusText">System Locked</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN TOOL HUB CONTENT -->
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-10 my-auto w-full">
+
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-slate-800 pb-6">
+      <div>
+        <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-bold uppercase tracking-widest">
+          Secure Resources
+        </span>
+        <h2 class="text-3xl font-extrabold text-white tracking-tight mt-2">Central Tool Command Hub</h2>
+        <p class="text-slate-400 text-xs mt-1">Direct access to agency infrastructure. Requires valid passkey authentication.</p>
+      </div>
+      <div class="text-xs bg-slate-900 px-4 py-2 rounded-xl border border-slate-800 text-slate-300">
+        <i class="fa-solid fa-shield-halved text-emerald-400 mr-2"></i>Anti-Leak Protection Active
+      </div>
+    </div>
+
+    <!-- TOOL CARDS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Card 1 -->
+      <div onclick="openProtectedTool('https://chatgpt.com')" class="glass-card p-6 rounded-2xl cursor-pointer glow-hover transition group">
+        <div class="flex justify-between items-center mb-4">
+          <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl text-xl group-hover:scale-110 transition">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <i class="fa-solid fa-lock text-slate-500 tool-lock text-sm"></i>
+        </div>
+        <h3 class="font-bold text-white text-base">ChatGPT & Gemini AI</h3>
+        <p class="text-xs text-slate-400 mt-1">Scriptwriting, Pitching & Strategy Engine</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div onclick="openProtectedTool('https://n8n.io')" class="glass-card p-6 rounded-2xl cursor-pointer glow-hover transition group">
+        <div class="flex justify-between items-center mb-4">
+          <div class="p-3 bg-rose-500/10 text-rose-400 rounded-xl text-xl group-hover:scale-110 transition">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <i class="fa-solid fa-lock text-slate-500 tool-lock text-sm"></i>
+        </div>
+        <h3 class="font-bold text-white text-base">n8n Workflow Engine</h3>
+        <p class="text-xs text-slate-400 mt-1">Lead Processing & Automated Email Webhooks</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div onclick="openProtectedTool('https://adsmanager.facebook.com')" class="glass-card p-6 rounded-2xl cursor-pointer glow-hover transition group">
+        <div class="flex justify-between items-center mb-4">
+          <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl text-xl group-hover:scale-110 transition">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <i class="fa-solid fa-lock text-slate-500 tool-lock text-sm"></i>
+        </div>
+        <h3 class="font-bold text-white text-base">Meta & Google Ads</h3>
+        <p class="text-xs text-slate-400 mt-1">Commercial Ad Placements & Metrics</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div onclick="openProtectedTool('https://drive.google.com')" class="glass-card p-6 rounded-2xl cursor-pointer glow-hover transition group">
+        <div class="flex justify-between items-center mb-4">
+          <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-xl group-hover:scale-110 transition">
+            <i class="fa-solid fa-box-archive"></i>
+          </div>
+          <i class="fa-solid fa-lock text-slate-500 tool-lock text-sm"></i>
+        </div>
+        <h3 class="font-bold text-white text-base">Production Asset Cloud</h3>
+        <p class="text-xs text-slate-400 mt-1">Raw Footage, B-Rolls & Master Files</p>
+      </div>
+
+    </div>
+
+    <!-- NOTICE BOX -->
+    <div class="glass p-6 rounded-2xl border border-slate-800 flex items-center space-x-4">
+      <div class="p-3 bg-blue-600/20 text-blue-400 rounded-xl text-xl">
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+      <div>
+        <h4 class="font-bold text-white text-sm">Security Instruction</h4>
+        <p class="text-xs text-slate-400">If any link fails to open, return to the <a href="index.html" class="text-blue-400 underline">Security Gate</a> and enter the master passkey (`OURA2026`).</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-900 px-8 py-4 text-center text-xs text-slate-500">
+    AI Media Studio & Operations Suite &copy; 2026. Protected Infrastructure.
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="dashboard.js"></script>
+</body>
+</html>

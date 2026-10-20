@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Media Studio & Operations Suite | Security Gate</title>
+  <!-- Tailwind CSS & FontAwesome Icons CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- External Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="glass sticky top-0 z-50 px-8 py-4 flex justify-between items-center border-b border-slate-800">
+    <div class="flex items-center space-x-4">
+      <div class="p-2.5 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/20">
+        <i class="fa-solid fa-clapperboard text-white text-xl"></i>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold tracking-tight text-white">AI Media Studio Suite</h1>
+        <p class="text-xs text-blue-400 font-medium">Production & Media Network Hub</p>
+      </div>
+    </div>
+
+    <!-- NAV LINKS -->
+    <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold text-slate-300">
+      <a href="index.html" class="text-blue-400 border-b-2 border-blue-500 pb-1">Security Gate</a>
+      <a href="dashboard.html" class="hover:text-blue-400 transition">Tool Hub</a>
+      <a href="operations.html" class="hover:text-blue-400 transition">Operations & Staff</a>
+      <a href="ai-tools.html" class="hover:text-blue-400 transition">AI Script & Rates</a>
+      <a href="contact.html" class="hover:text-blue-400 transition">Advertiser Portal</a>
+    </nav>
+
+    <!-- STATUS & AUTH BUTTON -->
+    <div class="flex items-center space-x-4">
+      <div id="statusBadge" class="flex items-center space-x-2 px-3 py-1.5 bg-red-500/10 border border-red-500/30 rounded-full">
+        <span id="dotIndicator" class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-red-400" id="statusText">System Locked</span>
+      </div>
+      <button onclick="toggleAuthModal()" id="authBtn" class="bg-blue-600 hover:bg-blue-500 text-white text-xs px-4 py-2.5 rounded-xl font-bold tracking-wide transition shadow-lg shadow-blue-600/30">
+        Unlock Portal Access
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN HERO & GATEWAY SECTION -->
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-12 my-auto">
+
+    <div class="glass p-10 md:p-14 rounded-3xl border border-slate-800 relative overflow-hidden text-center space-y-6">
+      <div class="absolute -top-32 -left-32 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <span class="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-bold uppercase tracking-widest">
+        Enterprise Passkey Security Gate
+      </span>
+
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+        Digital Production Agency & Media Network Automation Portal
+      </h2>
+
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
+        Welcome to the central operational suite. Access to internal production tools, asset repositories, and advertising management is restricted to authorized personnel.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <button onclick="toggleAuthModal()" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs px-8 py-4 rounded-xl shadow-xl shadow-blue-600/25 transition">
+          <i class="fa-solid fa-key mr-2"></i>Authenticate Passkey
+        </button>
+        <a href="operations.html" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 font-semibold text-xs px-8 py-4 rounded-xl transition">
+          <i class="fa-solid fa-sitemap mr-2"></i>View Public Operations
+        </a>
+      </div>
+    </div>
+
+    <!-- MODULE PREVIEW GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl w-fit text-lg">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 class="font-bold text-white text-sm">Protected Asset Hub</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Access ChatGPT, n8n Automation Engine, Meta Ads, and video asset cloud repositories securely.</p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl w-fit text-lg">
+          <i class="fa-solid fa-users-gear"></i>
+        </div>
+        <h3 class="font-bold text-white text-sm">Studio Staff & Operations</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Comprehensive workflow tracking from pre-production to broadcasting, with full staff directories.</p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl w-fit text-lg">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <h3 class="font-bold text-white text-sm">n8n Lead Automation</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Automated commercial ad onboarding with real-time Gemini AI proposals and sheet logging.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- AUTHENTICATION MODAL -->
+  <div id="authModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
+    <div class="glass p-8 rounded-3xl max-w-md w-full border border-slate-700 space-y-6 text-center">
+      <div class="p-4 bg-blue-600/20 text-blue-400 rounded-full w-14 h-14 mx-auto flex items-center justify-center text-2xl">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold text-white">Enter Security Passkey</h4>
+        <p class="text-xs text-slate-400 mt-1">Provide master key to unlock enterprise features across all portal pages.</p>
+      </div>
+      <input type="password" id="passkeyInput" placeholder="Passkey (Default: OURA2026)" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-center text-sm outline-none focus:border-blue-500 text-white tracking-widest">
+      <div class="flex space-x-3">
+        <button onclick="toggleAuthModal()" class="w-1/2 bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-xl text-xs font-semibold">Cancel</button>
+        <button onclick="verifyPasskey()" class="w-1/2 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-xs font-bold shadow-lg shadow-blue-600/30">Authenticate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-900 px-8 py-4 text-center text-xs text-slate-500">
+    AI Media Studio & Operations Suite &copy; 2026. Enterprise Management System.
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="index.js"></script>
+</body>
+</html>
