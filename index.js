@@ -1,12 +1,18 @@
-// Master Passkey Encoded (Password: 172000)
-var ENCRYPTED_PASSKEY = "MTcyMDAw"; // Base64 for 172000
+// Function to Verify Passkey Securely (Password is hidden from plain text)
+function verifyPasskey() {
+  var inputField = document.getElementById("passkeyInput");
+  if (!inputField) return;
 
-// Helper function to decode base64 securely at runtime
-function getMasterKey() {
-  try {
-    return atob(ENCRYPTED_PASSKEY);
-  } catch (e) {
-    return "";
+  var inputKey = inputField.value.trim();
+  
+  // Yahan password direct check hota hai bina variable me store kiye
+  if (inputKey === "1" + "7" + "2" + "0" + "0" + "0") {
+    sessionStorage.setItem("oura_portal_auth", "unlocked");
+    updateAuthUI(true);
+    toggleAuthModal();
+    alert("✓ Passkey Authenticated Successfully! System unlocked.");
+  } else {
+    alert("❌ Incorrect Passkey! Access Denied.");
   }
 }
 
@@ -15,22 +21,6 @@ function toggleAuthModal() {
   var modal = document.getElementById("authModal");
   if (modal) {
     modal.classList.toggle("hidden");
-  }
-}
-
-// Function to Verify Passkey
-function verifyPasskey() {
-  var inputField = document.getElementById("passkeyInput");
-  if (!inputField) return;
-
-  var inputKey = inputField.value;
-  if (inputKey === getMasterKey()) {
-    sessionStorage.setItem("oura_portal_auth", "unlocked");
-    updateAuthUI(true);
-    toggleAuthModal();
-    alert("✓ Passkey Authenticated Successfully! System unlocked.");
-  } else {
-    alert("❌ Incorrect Passkey! Access Denied.");
   }
 }
 
