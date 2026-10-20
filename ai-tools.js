@@ -1,30 +1,43 @@
-// Function to Simulate AI Commercial Script Generation
-function generateAIScript() {
+// Function to Generate Real AI Commercial Script via n8n / Gemini API
+async function generateAIScript() {
   var brandInput = document.getElementById("scriptBrand");
   var audienceInput = document.getElementById("scriptAudience");
   var outputBox = document.getElementById("scriptOutput");
 
+  if (!brandInput || !audienceInput || !outputBox) return;
+
   var brand = brandInput.value.trim() || "Oura Media Brand";
   var audience = audienceInput.value.trim() || "General Target Audience";
 
-  outputBox.innerText = "⚡ Connecting to Gemini AI Engine...\nGenerating cinematic TVC concept...";
+  // UI Loading State
+  outputBox.innerText = "⚡ Connecting to Real Gemini AI Engine...\nGenerating dynamic commercial script for " + brand + "...";
 
-  setTimeout(function () {
-    outputBox.innerText = `[TVC PRODUCTION SCRIPT: ${brand.toUpperCase()}]\n` +
-      `--------------------------------------------------\n` +
-      `• TARGET NICHE: ${audience}\n` +
-      `• FORMAT: 30-Second High-Impact Commercial\n\n` +
-      `[00:00 - 00:08] SCENE START: Dynamic cinematic drone shot moving into a modern studio.\n` +
-      `AUDIO: Energetic electronic rhythm mixed with crisp sound effects.\n` +
-      `VOICEOVER: "Ready to elevate your standards? Introducing ${brand}."\n\n` +
-      `[00:08 - 00:22] VISUAL MONTAGE: Fast-paced cuts showcasing product performance and happy customers.\n` +
-      `VOICEOVER: "Engineered specifically for modern creators and professionals."\n\n` +
-      `[00:22 - 00:30] CALL TO ACTION: Bold studio logo reveal with contact details.\n` +
-      `[SCENE END - APPROVED FOR BROADCAST]`;
-  }, 800);
+  try {
+    // Yahan apna actual n8n Webhook URL paste karein jo Gemini AI node se connected ho
+    var response = await fetch("YOUR_N8N_AI_WEBHOOK_URL_HERE", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        brand: brand,
+        audience: audience,
+        timestamp: new Date().toISOString()
+      })
+    });
+
+    if (response.ok) {
+      var data = await response.json();
+      // n8n se jo real script ya output aaye ga wo yahan show hoga
+      outputBox.innerText = data.script || data.output || JSON.stringify(data, null, 2);
+    } else {
+      outputBox.innerText = "❌ Error: Failed to connect with Gemini AI workflow. Please check your n8n webhook.";
+    }
+  } catch (error) {
+    console.error(error);
+    outputBox.innerText = "❌ Network connection error! Please check your n8n server or webhook URL.";
+  }
 }
 
-// Function to Calculate Commercial Rate Card Budget
+// Function to Calculate Commercial Rate Card Budget (Yeh bilkul theek kaam kar raha hai)
 function calculateRate() {
   var serviceSelect = document.getElementById("calcService");
   var weeksInput = document.getElementById("calcWeeks");
