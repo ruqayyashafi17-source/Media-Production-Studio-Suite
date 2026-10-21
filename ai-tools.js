@@ -13,12 +13,12 @@ async function generateAIScript() {
   outputBox.innerText = "⚡ Connecting to Real Gemini AI Engine...\nGenerating dynamic commercial script for " + brand + "...";
 
   try {
-    // n8n Webhook URL with LocalTunnel and Bypass Header
+    // n8n Webhook URL with Ngrok and Bypass Header
     var response = await fetch("https://diminish-blend-deem.ngrok-free.dev/webhook/script-generator", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
-        "Bypass-Tunnel-Reminder": "true"
+        "ngrok-skip-browser-warning": "true"
       },
       body: JSON.stringify({
         brand: brand,
