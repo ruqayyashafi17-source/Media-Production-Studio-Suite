@@ -3,17 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Media Studio & Operations Suite | Protected Tool Hub</title>
+  <title>Tool Hub | AI Media Studio & Operations Suite</title>
+  <!-- Tailwind CSS & FontAwesome Icons CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- External Custom CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- Global Portal Security Guard (Session Based) -->
-  <script>
-    if (sessionStorage.getItem("oura_portal_auth") !== "unlocked") {
-      alert("🔒 System Restricted! Please enter the Passkey on the Security Gate first.");
-      window.location.href = "index.html";
-    }
-  </script>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
 
@@ -25,7 +20,7 @@
       </div>
       <div>
         <h1 class="text-lg font-bold tracking-tight text-white">AI Media Studio Suite</h1>
-        <p class="text-xs text-blue-400 font-medium">Protected Tool Hub</p>
+        <p class="text-xs text-blue-400 font-medium">Production & Media Network Hub</p>
       </div>
     </div>
 
@@ -38,103 +33,130 @@
       <a href="contact.html" class="hover:text-blue-400 transition">Advertiser Portal</a>
     </nav>
 
-    <!-- STATUS BADGE -->
+    <!-- STATUS & AUTH BUTTON -->
     <div class="flex items-center space-x-4">
       <div id="statusBadge" class="flex items-center space-x-2 px-3 py-1.5 bg-red-500/10 border border-red-500/30 rounded-full">
         <span id="dotIndicator" class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
         <span class="text-xs font-semibold text-red-400" id="statusText">System Locked</span>
       </div>
+      <button onclick="toggleAuthModal()" id="authBtn" class="bg-blue-600 hover:bg-blue-500 text-white text-xs px-4 py-2.5 rounded-xl font-bold tracking-wide transition shadow-lg shadow-blue-600/30">
+        Unlock Portal Access
+      </button>
     </div>
   </header>
 
-  <!-- MAIN TOOL HUB CONTENT -->
-  <main class="max-w-6xl mx-auto px-6 py-12 space-y-10 my-auto w-full">
+  <!-- MAIN DASHBOARD CONTENT -->
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8 flex-1 w-full">
 
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-slate-800 pb-6">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
       <div>
-        <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-xs font-bold uppercase tracking-widest">
-          Secure Resources
-        </span>
-        <h2 class="text-3xl font-extrabold text-white tracking-tight mt-2">Central Tool Command Hub</h2>
-        <p class="text-slate-400 text-xs mt-1">Direct access to agency infrastructure. Requires valid passkey authentication.</p>
+        <h2 class="text-2xl font-bold text-white tracking-tight">Production & External AI Operations Hub</h2>
+        <p class="text-xs text-slate-400 mt-1">Direct single-click launcher for external AI engines, cloud automation workflows, and ad suites.</p>
       </div>
-      <div class="text-xs bg-slate-900 px-4 py-2 rounded-xl border border-slate-800 text-slate-300">
-        <i class="fa-solid fa-shield-halved text-emerald-400 mr-2"></i>Anti-Leak Protection Active
-      </div>
+      <span class="px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold rounded-lg w-fit">
+        4 Active Operational Systems
+      </span>
     </div>
 
-    <!-- TOOL CARDS GRID -->
+    <!-- TOOL HUB GRID -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      <!-- Card 1 -->
-      <div onclick="openProtectedTool('https://chatgpt.com')" class="glass-card p-6 rounded-2xl cursor-pointer glow-hover transition group">
-        <div class="flex justify-between items-center mb-4">
-          <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl text-xl group-hover:scale-110 transition">
-            <i class="fa-solid fa-brain"></i>
+
+      <!-- TOOL 1: CHATGPT & GEMINI AI -->
+      <a href="https://chatgpt.com" target="_blank" class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300 group flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl text-xl group-hover:scale-110 transition">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-blue-400 transition"></i>
           </div>
-          <i class="fa-solid fa-lock text-slate-500 tool-lock text-sm"></i>
-        </div>
-        <h3 class="font-bold text-white text-base">ChatGPT & Gemini AI</h3>
-        <p class="text-xs text-slate-400 mt-1">Scriptwriting, Pitching & Strategy Engine</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div onclick="openProtectedTool('https://n8n.io')" class="glass-card p-6 rounded-2xl cursor-pointer glow-hover transition group">
-        <div class="flex justify-between items-center mb-4">
-          <div class="p-3 bg-rose-500/10 text-rose-400 rounded-xl text-xl group-hover:scale-110 transition">
-            <i class="fa-solid fa-network-wired"></i>
+          <div>
+            <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">ChatGPT & Gemini AI</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Scriptwriting, Pitching & Strategy Engine</p>
           </div>
-          <i class="fa-solid fa-lock text-slate-500 tool-lock text-sm"></i>
         </div>
-        <h3 class="font-bold text-white text-base">n8n Workflow Engine</h3>
-        <p class="text-xs text-slate-400 mt-1">Lead Processing & Automated Email Webhooks</p>
-      </div>
+        <span class="text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md w-fit">Live Integration</span>
+      </a>
 
-      <!-- Card 3 -->
-      <div onclick="openProtectedTool('https://adsmanager.facebook.com')" class="glass-card p-6 rounded-2xl cursor-pointer glow-hover transition group">
-        <div class="flex justify-between items-center mb-4">
-          <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl text-xl group-hover:scale-110 transition">
-            <i class="fa-solid fa-chart-line"></i>
+      <!-- TOOL 2: N8N WORKFLOW ENGINE -->
+      <a href="http://localhost:5678" target="_blank" class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300 group flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="p-3 bg-red-500/10 text-red-400 rounded-xl text-xl group-hover:scale-110 transition">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-blue-400 transition"></i>
           </div>
-          <i class="fa-solid fa-lock text-slate-500 tool-lock text-sm"></i>
-        </div>
-        <h3 class="font-bold text-white text-base">Meta & Google Ads</h3>
-        <p class="text-xs text-slate-400 mt-1">Commercial Ad Placements & Metrics</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div onclick="openProtectedTool('https://drive.google.com')" class="glass-card p-6 rounded-2xl cursor-pointer glow-hover transition group">
-        <div class="flex justify-between items-center mb-4">
-          <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-xl group-hover:scale-110 transition">
-            <i class="fa-solid fa-box-archive"></i>
+          <div>
+            <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">n8n Workflow Engine</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Lead Processing & Automated Email Webhooks</p>
           </div>
-          <i class="fa-solid fa-lock text-slate-500 tool-lock text-sm"></i>
         </div>
-        <h3 class="font-bold text-white text-base">Production Asset Cloud</h3>
-        <p class="text-xs text-slate-400 mt-1">Raw Footage, B-Rolls & Master Files</p>
-      </div>
+        <span class="text-[10px] font-semibold tracking-wider uppercase text-red-400 bg-red-500/10 px-2.5 py-1 rounded-md w-fit">Automation Host</span>
+      </a>
 
-    </div>
+      <!-- TOOL 3: META ADS MANAGER -->
+      <a href="https://adsmanager.facebook.com" target="_blank" class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300 group flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl text-xl group-hover:scale-110 transition">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-blue-400 transition"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">Meta Ads Manager</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Commercial Campaign Optimization & Metrics</p>
+          </div>
+        </div>
+        <span class="text-[10px] font-semibold tracking-wider uppercase text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-md w-fit">Ad Network</span>
+      </a>
 
-    <!-- NOTICE BOX -->
-    <div class="glass p-6 rounded-2xl border border-slate-800 flex items-center space-x-4">
-      <div class="p-3 bg-blue-600/20 text-blue-400 rounded-xl text-xl">
-        <i class="fa-solid fa-circle-info"></i>
-      </div>
-      <div>
-        <h4 class="font-bold text-white text-sm">Security Instruction</h4>
-        <p class="text-xs text-slate-400">If any link fails to open, return to the <a href="index.html" class="text-blue-400 underline">Security Gate</a> and enter the master passkey (`OURA2026`).</p>
-      </div>
+      <!-- TOOL 4: GOOGLE CLOUD REPOSITORY -->
+      <a href="https://drive.google.com" target="_blank" class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300 group flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="p-3 bg-yellow-500/10 text-yellow-400 rounded-xl text-xl group-hover:scale-110 transition">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-blue-400 transition"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">Cloud Asset Storage</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Broadcast Videos, Raw Footage & Graphic Files</p>
+          </div>
+        </div>
+        <span class="text-[10px] font-semibold tracking-wider uppercase text-yellow-400 bg-yellow-500/10 px-2.5 py-1 rounded-md w-fit">Asset Cloud</span>
+      </a>
+
     </div>
 
   </main>
 
+  <!-- AUTHENTICATION MODAL -->
+  <div id="authModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
+    <div class="glass p-8 rounded-3xl max-w-md w-full border border-slate-700 space-y-6 text-center">
+      <div class="p-4 bg-blue-600/20 text-blue-400 rounded-full w-14 h-14 mx-auto flex items-center justify-center text-2xl">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold text-white">Enter Security Passkey</h4>
+        <p class="text-xs text-slate-400 mt-1">Provide master key to unlock enterprise features across all portal pages.</p>
+      </div>
+      <input type="password" id="passkeyInput" placeholder="Passkey" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-center text-sm outline-none focus:border-blue-500 text-white tracking-widest">
+      <div class="flex space-x-3">
+        <button onclick="toggleAuthModal()" class="w-1/2 bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-xl text-xs font-semibold">Cancel</button>
+        <button onclick="verifyPasskey()" class="w-1/2 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-xs font-bold shadow-lg shadow-blue-600/30">Authenticate</button>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="border-t border-slate-900 px-8 py-4 text-center text-xs text-slate-500">
-    AI Media Studio & Operations Suite &copy; 2026. Protected Infrastructure.
+    AI Media Studio & Operations Suite &copy; 2026. Enterprise Management System.
   </footer>
 
   <!-- External JavaScript -->
-  <script src="dashboard.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
