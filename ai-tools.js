@@ -14,7 +14,7 @@ async function generateAIScript() {
 
   try {
     // n8n Webhook URL with LocalTunnel and Bypass Header
-    var response = await fetch("https://modern-gifts-refuse.loca.lt/webhook/script-generator", {
+    var response = await fetch("https://lucky-brooms-lay.loca.lt/webhook/script-generator", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
