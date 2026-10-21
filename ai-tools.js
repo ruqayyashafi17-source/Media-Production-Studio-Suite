@@ -13,11 +13,13 @@ async function generateAIScript() {
   outputBox.innerText = "⚡ Connecting to Real Gemini AI Engine...\nGenerating dynamic commercial script for " + brand + "...";
 
   try {
-    // Yahan apna actual n8n Webhook URL paste karein jo Gemini AI node se connected ho
-    var response = await fetch("http://localhost:5678/webhook/script-generator", {
-
+    // n8n Webhook URL with LocalTunnel and Bypass Header
+    var response = await fetch("https://modern-gifts-refuse.loca.lt/webhook/script-generator", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Bypass-Tunnel-Reminder": "true"
+      },
       body: JSON.stringify({
         brand: brand,
         audience: audience,
