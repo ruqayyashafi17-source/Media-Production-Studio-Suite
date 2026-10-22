@@ -13,12 +13,11 @@ async function generateAIScript() {
   outputBox.innerText = "⚡ Connecting to Real Gemini AI Engine...\nGenerating dynamic commercial script for " + brand + "...";
 
   try {
-    // n8n Webhook URL with Ngrok and Bypass Header
-    var response = await fetch("http://localhost:5678/webhook-test/script-generator", {
+    // Standard n8n Webhook Endpoint
+    var response = await fetch("http://localhost:5678/webhook/script-generator", {
       method: "POST",
       headers: { 
-        "Content-Type": "application/json",
-        "ngrok-skip-browser-warning": "true"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         brand: brand,
