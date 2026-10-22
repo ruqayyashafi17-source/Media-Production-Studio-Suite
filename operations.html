@@ -128,142 +128,166 @@
       </div>
     </div>
 
-    <!-- PART 2: WORKERS & STAFF DIRECTORY WITH REAL TASK ASSIGNMENT -->
+    <!-- PART 2: WORKERS & STAFF DIRECTORY WITH DETAILED PROFILES -->
     <div class="space-y-6">
       <div class="flex justify-between items-end">
         <h3 class="text-xl font-bold text-white flex items-center">
-          <i class="fa-solid fa-users-gear text-purple-400 mr-3"></i> Departmental Workforce & Active Roles
+          <i class="fa-solid fa-users-gear text-purple-400 mr-3"></i> Departmental Workforce & Staff Profiles
         </h3>
-        <span class="text-xs text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">Click any role to assign task</span>
+        <span class="text-xs text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">Click card for Staff Profile</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Role 1 -->
-        <div onclick="openAssignModal('Creative Director')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <!-- Staff 1 -->
+        <div onclick="openStaffModal('Creative Director', 'Ali Raza', 'EMP-101', 'Creative Dept', 'Morning (09:00 AM - 05:00 PM)', 'ali.raza@mediahouse.com', 'Notion & AI Concept boards', 'Sets visual style, brand messaging, and creative vision for all TV commercials.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
           <div class="flex justify-between items-start">
             <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl text-lg group-hover:scale-110 transition">
               <i class="fa-solid fa-video"></i>
             </div>
             <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full font-semibold">Creative Dept</span>
           </div>
-          <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Creative Director</h4>
+          <div>
+            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Creative Director</h4>
+            <p class="text-xs text-slate-300 font-medium">Ali Raza <span class="text-slate-500 text-[10px]">(EMP-101)</span></p>
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">Sets the visual style, brand messaging, and creative vision for all TV commercials and shows.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span><strong>Key Tool:</strong> Notion & AI Concept boards</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">Assign Task →</span>
+            <span><strong>Key Tool:</strong> Notion & AI Boards</span>
+            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
-        <!-- Role 2 -->
-        <div onclick="openAssignModal('Scriptwriter')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <!-- Staff 2 -->
+        <div onclick="openStaffModal('Scriptwriter', 'Saima Khan', 'EMP-102', 'Creative Dept', 'Morning (09:00 AM - 05:00 PM)', 'saima.script@mediahouse.com', 'ChatGPT / Gemini AI & Celtx', 'Drafts dialogues, commercial scripts, show outlines, and voiceover narratives.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
           <div class="flex justify-between items-start">
             <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl text-lg group-hover:scale-110 transition">
               <i class="fa-solid fa-pen-nib"></i>
             </div>
             <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full font-semibold">Creative Dept</span>
           </div>
-          <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Scriptwriter</h4>
+          <div>
+            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Scriptwriter</h4>
+            <p class="text-xs text-slate-300 font-medium">Saima Khan <span class="text-slate-500 text-[10px]">(EMP-102)</span></p>
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">Drafts engaging dialogues, commercial scripts, show outlines, and voiceover narratives.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> ChatGPT / Gemini AI</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">Assign Task →</span>
+            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
-        <!-- Role 3 -->
-        <div onclick="openAssignModal('Floor Producer / Manager')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <!-- Staff 3 -->
+        <div onclick="openStaffModal('Floor Producer / Manager', 'Hamza Tariq', 'EMP-103', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'hamza.floor@mediahouse.com', 'Studio Scheduler & Walkie Talkie', 'Manages studio schedules, equipment setup, guest hospitality, and live shooting.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
           <div class="flex justify-between items-start">
             <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl text-lg group-hover:scale-110 transition">
               <i class="fa-solid fa-clapperboard"></i>
             </div>
             <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full font-semibold">Production Dept</span>
           </div>
-          <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Floor Producer / Manager</h4>
+          <div>
+            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Floor Producer / Manager</h4>
+            <p class="text-xs text-slate-300 font-medium">Hamza Tariq <span class="text-slate-500 text-[10px]">(EMP-103)</span></p>
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">Manages studio schedules, equipment setup, guest hospitality, and live shooting timelines.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> Studio Scheduler</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">Assign Task →</span>
+            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
-        <!-- Role 4 -->
-        <div onclick="openAssignModal('Camera Operator')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <!-- Staff 4 -->
+        <div onclick="openStaffModal('Camera Operator', 'Usman Ahmed', 'EMP-104', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'usman.cam@mediahouse.com', 'Sony FX9 / ARRI Studio Rig', 'Operates studio broadcast cameras, frames cinematic shots, and handles multi-angle.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
           <div class="flex justify-between items-start">
             <div class="p-3 bg-rose-500/10 text-rose-400 rounded-xl text-lg group-hover:scale-110 transition">
               <i class="fa-solid fa-camera"></i>
             </div>
             <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full font-semibold">Production Dept</span>
           </div>
-          <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Camera Operator</h4>
+          <div>
+            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Camera Operator</h4>
+            <p class="text-xs text-slate-300 font-medium">Usman Ahmed <span class="text-slate-500 text-[10px]">(EMP-104)</span></p>
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">Operates studio broadcast cameras, frames cinematic shots, and handles multi-angle coverage.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> Sony FX9 / ARRI Rig</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">Assign Task →</span>
+            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
-        <!-- Role 5 -->
-        <div onclick="openAssignModal('Audio Engineer')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <!-- Staff 5 -->
+        <div onclick="openStaffModal('Audio Engineer', 'Bilal Hassan', 'EMP-105', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'bilal.audio@mediahouse.com', 'Soundcraft Mixing Console', 'Monitors live studio sound inputs, wireless mics, acoustic levels, and audio mixing.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
           <div class="flex justify-between items-start">
             <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-lg group-hover:scale-110 transition">
               <i class="fa-solid fa-microphone-lines"></i>
             </div>
             <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full font-semibold">Production Dept</span>
           </div>
-          <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Audio Engineer</h4>
+          <div>
+            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Audio Engineer</h4>
+            <p class="text-xs text-slate-300 font-medium">Bilal Hassan <span class="text-slate-500 text-[10px]">(EMP-105)</span></p>
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">Monitors live studio sound inputs, wireless mics, acoustic levels, and audio mixing.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> Soundcraft Console</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">Assign Task →</span>
+            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
-        <!-- Role 6 -->
-        <div onclick="openAssignModal('Lead Video Editor')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <!-- Staff 6 -->
+        <div onclick="openStaffModal('Lead Video Editor', 'Zainab Malik', 'EMP-106', 'Post-Production', 'Evening (02:00 PM - 10:00 PM)', 'zainab.edit@mediahouse.com', 'Adobe Premiere Pro & DaVinci', 'Assembles raw footages, cuts commercials, applies transitions, and finalizes cuts.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
           <div class="flex justify-between items-start">
             <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl text-lg group-hover:scale-110 transition">
               <i class="fa-solid fa-film"></i>
             </div>
             <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-full font-semibold">Post-Production</span>
           </div>
-          <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Lead Video Editor</h4>
+          <div>
+            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Lead Video Editor</h4>
+            <p class="text-xs text-slate-300 font-medium">Zainab Malik <span class="text-slate-500 text-[10px]">(EMP-106)</span></p>
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">Assembles raw footages, cuts commercials, applies transitions, and finalizes cuts.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span><strong>Key Tool:</strong> Adobe Premiere Pro</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">Assign Task →</span>
+            <span><strong>Key Tool:</strong> Premiere & DaVinci</span>
+            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
-        <!-- Role 7 -->
-        <div onclick="openAssignModal('VFX & Motion Designer')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <!-- Staff 7 -->
+        <div onclick="openStaffModal('VFX & Motion Designer', 'Fahad Mustafa', 'EMP-107', 'Post-Production', 'Evening (02:00 PM - 10:00 PM)', 'fahad.vfx@mediahouse.com', 'After Effects & Blender', 'Creates animated lower-thirds, brand logos, visual effects, and dynamic transitions.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
           <div class="flex justify-between items-start">
             <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl text-lg group-hover:scale-110 transition">
               <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
             <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-full font-semibold">Post-Production</span>
           </div>
-          <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">VFX & Motion Designer</h4>
+          <div>
+            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">VFX & Motion Designer</h4>
+            <p class="text-xs text-slate-300 font-medium">Fahad Mustafa <span class="text-slate-500 text-[10px]">(EMP-107)</span></p>
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">Creates animated lower-thirds, brand logos, visual effects, and dynamic transitions.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> After Effects & Blender</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">Assign Task →</span>
+            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
-        <!-- Role 8 -->
-        <div onclick="openAssignModal('Ad Sales & Sponsorship Mgr')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <!-- Staff 8 -->
+        <div onclick="openStaffModal('Ad Sales & Sponsorship Mgr', 'Ayesha Bilal', 'EMP-108', 'Sales & Media', 'General (09:00 AM - 05:00 PM)', 'ayesha.sales@mediahouse.com', 'n8n CRM & Google Sheets', 'Negotiates ad slots, closes brand deals, and coordinates with automated lead systems.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
           <div class="flex justify-between items-start">
             <div class="p-3 bg-rose-500/10 text-rose-400 rounded-xl text-lg group-hover:scale-110 transition">
               <i class="fa-solid fa-bullhorn"></i>
             </div>
             <span class="text-[10px] bg-rose-500/10 text-rose-400 px-2.5 py-1 rounded-full font-semibold">Sales & Media</span>
           </div>
-          <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Ad Sales & Sponsorship Mgr</h4>
+          <div>
+            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Ad Sales & Sponsorship Mgr</h4>
+            <p class="text-xs text-slate-300 font-medium">Ayesha Bilal <span class="text-slate-500 text-[10px]">(EMP-108)</span></p>
+          </div>
           <p class="text-xs text-slate-400 leading-relaxed">Negotiates ad slots, closes brand deals, and coordinates with automated lead systems.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span><strong>Key Tool:</strong> n8n CRM & Google Sheets</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">Assign Task →</span>
+            <span><strong>Key Tool:</strong> n8n CRM & Sheets</span>
+            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
@@ -286,24 +310,47 @@
 
   </main>
 
-  <!-- TASK ASSIGNMENT MODAL POPUP -->
-  <div id="assignModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
-    <div class="glass p-8 rounded-3xl max-w-md w-full border border-slate-700 space-y-5 text-left">
-      <div class="flex justify-between items-center">
-        <h4 class="text-lg font-bold text-white">Assign Production Task</h4>
-        <button onclick="closeAssignModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+  <!-- STAFF PROFILE & TASK MODAL POPUP -->
+  <div id="staffModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
+    <div class="glass p-8 rounded-3xl max-w-lg w-full border border-slate-700 space-y-6 text-left">
+      <div class="flex justify-between items-start border-b border-slate-800 pb-4">
+        <div>
+          <span id="mDept" class="text-[10px] bg-blue-500/10 text-blue-400 px-2.5 py-0.5 rounded-full font-semibold">Department</span>
+          <h4 id="mName" class="text-xl font-bold text-white mt-1">Staff Name</h4>
+          <p id="mRole" class="text-xs text-blue-400 font-semibold">Designation</p>
+        </div>
+        <button onclick="closeStaffModal()" class="text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <div>
-        <label class="text-xs font-semibold text-slate-400">Assigned Role</label>
-        <input type="text" id="modalRoleName" readonly class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm text-blue-400 font-bold outline-none mt-1">
+
+      <!-- Staff Details Grid -->
+      <div class="grid grid-cols-2 gap-4 text-xs">
+        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+          <span class="text-slate-500 block text-[10px]">Employee ID</span>
+          <span id="mEmpId" class="text-slate-200 font-bold">EMP-000</span>
+        </div>
+        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+          <span class="text-slate-500 block text-[10px]">Shift Hours</span>
+          <span id="mShift" class="text-slate-200 font-bold">Shift Details</span>
+        </div>
+        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 col-span-2">
+          <span class="text-slate-500 block text-[10px]">Official Email</span>
+          <span id="mEmail" class="text-blue-400 font-semibold">email@mediahouse.com</span>
+        </div>
+        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 col-span-2">
+          <span class="text-slate-500 block text-[10px]">Key Software / Equipment</span>
+          <span id="mTools" class="text-slate-200 font-semibold">Software list</span>
+        </div>
       </div>
-      <div>
-        <label class="text-xs font-semibold text-slate-400">Task Title & Details</label>
-        <textarea id="modalTaskInput" placeholder="e.g. Finalize Commercial Cut for Client Project..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white outline-none focus:border-blue-500 mt-1 h-24"></textarea>
+
+      <!-- Assign New Task Section -->
+      <div class="space-y-2 border-t border-slate-800 pt-4">
+        <label class="text-xs font-semibold text-slate-300">Assign New Project Task to this Member</label>
+        <textarea id="modalTaskInput" placeholder="e.g. Prepare script outline for Commercial Ad #4..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white outline-none focus:border-blue-500 h-20"></textarea>
       </div>
+
       <div class="flex space-x-3">
-        <button onclick="closeAssignModal()" class="w-1/2 bg-slate-800 text-white py-3 rounded-xl text-xs font-semibold">Cancel</button>
-        <button onclick="saveTaskToBoard()" class="w-1/2 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-xs font-bold shadow-lg shadow-blue-600/30">Assign Task</button>
+        <button onclick="closeStaffModal()" class="w-1/2 bg-slate-800 text-white py-3 rounded-xl text-xs font-semibold">Close</button>
+        <button onclick="saveTaskFromModal()" class="w-1/2 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-xs font-bold shadow-lg shadow-blue-600/30">Assign Task</button>
       </div>
     </div>
   </div>
@@ -313,12 +360,13 @@
     AI Media Studio & Operations Suite &copy; 2026. Production & Staff Directory.
   </footer>
 
-  <!-- REAL INTERACTIVE JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    // Load tasks from LocalStorage on page load
     document.addEventListener("DOMContentLoaded", renderTasks);
 
-    // 1. Pipeline Phase Status Toggle
+    let activeStaffRole = "";
+    let activeStaffName = "";
+
     function togglePhase(pId) {
       const badge = document.getElementById('badge-' + pId);
       const bar = document.getElementById('bar-' + pId);
@@ -342,20 +390,27 @@
       }
     }
 
-    // 2. Modal Controls
-    function openAssignModal(role) {
-      document.getElementById('modalRoleName').value = role;
-      document.getElementById('assignModal').classList.remove('hidden');
+    function openStaffModal(role, name, empId, dept, shift, email, tools, desc) {
+      activeStaffRole = role;
+      activeStaffName = name;
+
+      document.getElementById('mRole').innerText = role;
+      document.getElementById('mName').innerText = name;
+      document.getElementById('mEmpId').innerText = empId;
+      document.getElementById('mDept').innerText = dept;
+      document.getElementById('mShift').innerText = shift;
+      document.getElementById('mEmail').innerText = email;
+      document.getElementById('mTools').innerText = tools;
+
+      document.getElementById('staffModal').classList.remove('hidden');
     }
 
-    function closeAssignModal() {
-      document.getElementById('assignModal').classList.add('hidden');
+    function closeStaffModal() {
+      document.getElementById('staffModal').classList.add('hidden');
       document.getElementById('modalTaskInput').value = '';
     }
 
-    // 3. Task Management Logic
-    function saveTaskToBoard() {
-      const role = document.getElementById('modalRoleName').value;
+    function saveTaskFromModal() {
       const text = document.getElementById('modalTaskInput').value.trim();
 
       if (!text) {
@@ -366,14 +421,15 @@
       const tasks = JSON.parse(localStorage.getItem("oura_operations_tasks") || "[]");
       tasks.push({
         id: Date.now(),
-        role: role,
+        role: activeStaffRole,
+        name: activeStaffName,
         detail: text,
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       });
 
       localStorage.setItem("oura_operations_tasks", JSON.stringify(tasks));
       renderTasks();
-      closeAssignModal();
+      closeStaffModal();
     }
 
     function renderTasks() {
@@ -381,16 +437,16 @@
       const container = document.getElementById('taskLogContainer');
 
       if (tasks.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-500 italic p-4 bg-slate-900/40 rounded-xl border border-slate-900 text-center">No tasks assigned yet. Click any role above to assign a production task.</p>`;
+        container.innerHTML = `<p class="text-xs text-slate-500 italic p-4 bg-slate-900/40 rounded-xl border border-slate-900 text-center">No tasks assigned yet. Click any staff card above to view details & assign a task.</p>`;
         return;
       }
 
       container.innerHTML = tasks.map(t => `
         <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl flex justify-between items-center text-xs space-x-4">
           <div class="flex items-center space-x-3">
-            <span class="p-2 bg-blue-500/10 text-blue-400 rounded-lg font-bold"><i class="fa-solid fa-tasks"></i></span>
+            <span class="p-2 bg-blue-500/10 text-blue-400 rounded-lg font-bold"><i class="fa-solid fa-user-check"></i></span>
             <div>
-              <span class="text-blue-400 font-bold">[${t.role}]</span>
+              <span class="text-blue-400 font-bold">${t.name}</span> <span class="text-slate-500">(${t.role})</span>
               <p class="text-slate-200 mt-0.5">${t.detail}</p>
             </div>
           </div>
