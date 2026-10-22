@@ -3,397 +3,312 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Media Studio & Operations Suite | Production & Staff Directory</title>
+  <title>Operations & Staff Directory | Broadcast Media Suite</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <!-- Global Portal Security Guard (Session Based) -->
   <script>
     if (sessionStorage.getItem("oura_portal_auth") !== "unlocked") {
-      alert("🔒 System Restricted! Please enter the Passkey on the Security Gate first.");
+      alert("🔒 Security Lock: Please authenticate via Security Gate first.");
       window.location.href = "index.html";
     }
   </script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+<body class="flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
 
-  <!-- TOP NAVIGATION BAR -->
-  <header class="glass sticky top-0 z-50 px-8 py-4 flex justify-between items-center border-b border-slate-800">
+  <!-- TOP BROADCAST HEADER -->
+  <header class="broadcast-panel sticky top-0 z-50 px-8 py-3.5 flex justify-between items-center border-b">
     <div class="flex items-center space-x-4">
-      <div class="p-2.5 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/20">
-        <i class="fa-solid fa-clapperboard text-white text-xl"></i>
+      <div class="p-2.5 bg-gradient-to-tr from-cyan-600 to-blue-600 rounded-xl shadow-lg shadow-cyan-500/20">
+        <i class="fa-solid fa-clapperboard text-white text-lg"></i>
       </div>
       <div>
-        <h1 class="text-lg font-bold tracking-tight text-white">AI Media Studio Suite</h1>
-        <p class="text-xs text-blue-400 font-medium">Operations & Staff Directory</p>
+        <h1 class="text-sm font-extrabold tracking-wider uppercase text-white font-code">Broadcast Control Room</h1>
+        <p class="text-[10px] text-cyan-400 font-code">OPERATIONS_NODE // WORKFORCE</p>
       </div>
     </div>
 
-    <!-- NAV LINKS -->
     <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold text-slate-300">
-      <a href="index.html" class="hover:text-blue-400 transition">Security Gate</a>
-      <a href="dashboard.html" class="hover:text-blue-400 transition">Tool Hub</a>
-      <a href="operations.html" class="text-blue-400 border-b-2 border-blue-500 pb-1">Operations & Staff</a>
-      <a href="ai-tools.html" class="hover:text-blue-400 transition">AI Script & Rates</a>
-      <a href="contact.html" class="hover:text-blue-400 transition">Advertiser Portal</a>
+      <a href="index.html" class="hover:text-cyan-400 transition">Security Gate</a>
+      <a href="dashboard.html" class="hover:text-cyan-400 transition">Tool Hub</a>
+      <a href="operations.html" class="text-cyan-400 border-b-2 border-cyan-400 pb-1">Operations & Staff</a>
+      <a href="ai-tools.html" class="hover:text-cyan-400 transition">AI Script & Rates</a>
+      <a href="contact.html" class="hover:text-cyan-400 transition">Advertiser Portal</a>
     </nav>
 
-    <!-- STATUS BADGE -->
-    <div class="flex items-center space-x-4">
-      <div class="flex items-center space-x-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-full">
-        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-        <span class="text-xs font-semibold text-blue-400">Studio Active</span>
+    <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span class="text-[10px] font-bold text-cyan-300 font-code uppercase">STUDIO ACTIVE</span>
       </div>
     </div>
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="max-w-6xl mx-auto px-6 py-12 space-y-16 my-auto w-full">
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-16 flex-1 w-full">
 
-    <!-- SECTION TITLE -->
     <div class="border-b border-slate-800 pb-6 flex justify-between items-end">
       <div>
-        <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 rounded-full text-xs font-bold uppercase tracking-widest">
-          Studio Management
+        <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-full text-[10px] font-bold uppercase tracking-widest font-code">
+          STATION MANAGEMENT
         </span>
-        <h2 class="text-3xl font-extrabold text-white tracking-tight mt-2">Production Lifecycle & Workforce Directory</h2>
+        <h2 class="text-3xl font-extrabold text-white tracking-tight mt-2 font-code">Production Lifecycle & Workforce Directory</h2>
         <p class="text-slate-400 text-xs mt-1">End-to-end media house workflow from script conceptualization to satellite transmission.</p>
       </div>
-      <span class="hidden md:inline-block px-3 py-1.5 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-xl text-xs font-semibold">
+      <span class="hidden md:inline-block px-3 py-1.5 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-xl text-xs font-bold font-code">
         Interactive Management Engine
       </span>
     </div>
 
-    <!-- PART 1: INTERACTIVE PRODUCTION PIPELINE -->
+    <!-- PIPELINE SECTION -->
     <div class="space-y-6">
-      <div class="flex justify-between items-center">
-        <h3 class="text-xl font-bold text-white flex items-center">
-          <i class="fa-solid fa-timeline text-blue-400 mr-3"></i> 4-Phase Broadcast Production Pipeline
-        </h3>
-        <span class="text-xs text-slate-400 italic">Click any phase card to toggle status</span>
-      </div>
+      <h3 class="text-sm font-extrabold tracking-widest uppercase text-cyan-400 flex items-center font-code">
+        <i class="fa-solid fa-timeline mr-2"></i> 4-Phase Broadcast Production Pipeline
+      </h3>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <!-- Phase 1 -->
-        <div onclick="togglePhase('p1')" id="phase-p1" class="glass-card p-6 rounded-2xl border border-blue-500/50 space-y-3 cursor-pointer hover:border-blue-400 transition">
+        <div onclick="togglePhase('p1')" id="phase-p1" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer">
           <div class="flex justify-between items-center">
-            <div class="text-xs font-extrabold text-blue-400 uppercase tracking-wider">Phase 01</div>
-            <span id="badge-p1" class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400">IN PROGRESS</span>
+            <div class="text-xs font-extrabold text-cyan-400 uppercase tracking-wider font-code">Phase 01</div>
+            <span id="badge-p1" class="text-[9px] font-bold px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-code">IN PROGRESS</span>
           </div>
           <h4 class="font-bold text-white text-base">Pre-Production</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">Client briefing, script drafting, storyboarding, talent casting, and studio schedule booking.</p>
-          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-3">
-            <div id="bar-p1" class="bg-blue-500 h-full w-2/3 transition-all duration-300"></div>
+          <p class="text-xs text-slate-400 leading-relaxed">Client briefing, script drafting, storyboarding, talent casting, and schedule booking.</p>
+          <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-3">
+            <div id="bar-p1" class="bg-cyan-500 h-full w-2/3 transition-all duration-300"></div>
           </div>
         </div>
 
-        <!-- Phase 2 -->
-        <div onclick="togglePhase('p2')" id="phase-p2" class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-400 transition">
+        <div onclick="togglePhase('p2')" id="phase-p2" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer">
           <div class="flex justify-between items-center">
-            <div class="text-xs font-extrabold text-purple-400 uppercase tracking-wider">Phase 02</div>
-            <span id="badge-p2" class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400">PENDING</span>
+            <div class="text-xs font-extrabold text-purple-400 uppercase tracking-wider font-code">Phase 02</div>
+            <span id="badge-p2" class="text-[9px] font-bold px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-code">PENDING</span>
           </div>
           <h4 class="font-bold text-white text-base">Studio Production</h4>
           <p class="text-xs text-slate-400 leading-relaxed">Multi-camera setup, studio floor lighting, live audio mixing, and host anchoring.</p>
-          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-3">
+          <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-3">
             <div id="bar-p2" class="bg-purple-500 h-full w-0 transition-all duration-300"></div>
           </div>
         </div>
 
-        <!-- Phase 3 -->
-        <div onclick="togglePhase('p3')" id="phase-p3" class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-400 transition">
+        <div onclick="togglePhase('p3')" id="phase-p3" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer">
           <div class="flex justify-between items-center">
-            <div class="text-xs font-extrabold text-emerald-400 uppercase tracking-wider">Phase 03</div>
-            <span id="badge-p3" class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400">PENDING</span>
+            <div class="text-xs font-extrabold text-emerald-400 uppercase tracking-wider font-code">Phase 03</div>
+            <span id="badge-p3" class="text-[9px] font-bold px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-code">PENDING</span>
           </div>
           <h4 class="font-bold text-white text-base">Post-Production</h4>
           <p class="text-xs text-slate-400 leading-relaxed">Video editing (Premiere/DaVinci), Motion Graphics, VFX compositing, and audio mastering.</p>
-          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-3">
+          <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-3">
             <div id="bar-p3" class="bg-emerald-500 h-full w-0 transition-all duration-300"></div>
           </div>
         </div>
 
-        <!-- Phase 4 -->
-        <div onclick="togglePhase('p4')" id="phase-p4" class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-400 transition">
+        <div onclick="togglePhase('p4')" id="phase-p4" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer">
           <div class="flex justify-between items-center">
-            <div class="text-xs font-extrabold text-amber-400 uppercase tracking-wider">Phase 04</div>
-            <span id="badge-p4" class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400">PENDING</span>
+            <div class="text-xs font-extrabold text-amber-400 uppercase tracking-wider font-code">Phase 04</div>
+            <span id="badge-p4" class="text-[9px] font-bold px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-code">PENDING</span>
           </div>
           <h4 class="font-bold text-white text-base">Broadcasting</h4>
           <p class="text-xs text-slate-400 leading-relaxed">Cable TV satellite transmission, YouTube live streaming, and automated social distribution.</p>
-          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-3">
+          <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-3">
             <div id="bar-p4" class="bg-amber-500 h-full w-0 transition-all duration-300"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- PART 2: WORKERS & STAFF DIRECTORY WITH DETAILED PROFILES -->
+    <!-- STAFF DIRECTORY SECTION -->
     <div class="space-y-6">
       <div class="flex justify-between items-end">
-        <h3 class="text-xl font-bold text-white flex items-center">
-          <i class="fa-solid fa-users-gear text-purple-400 mr-3"></i> Departmental Workforce & Staff Profiles
+        <h3 class="text-sm font-extrabold tracking-widest uppercase text-purple-400 flex items-center font-code">
+          <i class="fa-solid fa-users-gear mr-2"></i> Departmental Workforce & Staff Profiles
         </h3>
-        <span class="text-xs text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">Click card for Staff Profile</span>
+        <span class="text-xs text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20 font-code">Click card for Staff Profile</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
         <!-- Staff 1 -->
-        <div onclick="openStaffModal('Creative Director', 'Ali Raza', 'EMP-101', 'Creative Dept', 'Morning (09:00 AM - 05:00 PM)', 'ali.raza@mediahouse.com', 'Notion & AI Concept boards', 'Sets visual style, brand messaging, and creative vision for all TV commercials.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <div onclick="openStaffModal('Creative Director', 'Ali Raza', 'EMP-101', 'Creative Dept', 'Morning (09:00 AM - 05:00 PM)', 'ali.raza@mediahouse.com', 'Notion & AI Concept boards', 'Sets visual style, brand messaging, and creative vision.')" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer group">
           <div class="flex justify-between items-start">
-            <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl text-lg group-hover:scale-110 transition">
-              <i class="fa-solid fa-video"></i>
-            </div>
-            <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full font-semibold">Creative Dept</span>
+            <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl text-lg group-hover:scale-110 transition"><i class="fa-solid fa-video"></i></div>
+            <span class="text-[9px] bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded-full font-bold font-code">Creative Dept</span>
           </div>
           <div>
-            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Creative Director</h4>
-            <p class="text-xs text-slate-300 font-medium">Ali Raza <span class="text-slate-500 text-[10px]">(EMP-101)</span></p>
+            <h4 class="font-bold text-white text-base group-hover:text-cyan-400 transition">Creative Director</h4>
+            <p class="text-xs text-slate-300 font-medium">Ali Raza <span class="text-slate-500 text-[10px] font-code">(EMP-101)</span></p>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">Sets the visual style, brand messaging, and creative vision for all TV commercials and shows.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Sets visual style, brand messaging, and creative vision for all TV commercials.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> Notion & AI Boards</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
+            <span class="text-cyan-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
         <!-- Staff 2 -->
-        <div onclick="openStaffModal('Scriptwriter', 'Saima Khan', 'EMP-102', 'Creative Dept', 'Morning (09:00 AM - 05:00 PM)', 'saima.script@mediahouse.com', 'ChatGPT / Gemini AI & Celtx', 'Drafts dialogues, commercial scripts, show outlines, and voiceover narratives.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <div onclick="openStaffModal('Scriptwriter', 'Saima Khan', 'EMP-102', 'Creative Dept', 'Morning (09:00 AM - 05:00 PM)', 'saima.script@mediahouse.com', 'ChatGPT / Gemini AI & Celtx', 'Drafts dialogues and commercial scripts.')" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer group">
           <div class="flex justify-between items-start">
-            <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl text-lg group-hover:scale-110 transition">
-              <i class="fa-solid fa-pen-nib"></i>
-            </div>
-            <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full font-semibold">Creative Dept</span>
+            <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl text-lg group-hover:scale-110 transition"><i class="fa-solid fa-pen-nib"></i></div>
+            <span class="text-[9px] bg-indigo-500/10 text-indigo-400 px-2.5 py-1 rounded-full font-bold font-code">Creative Dept</span>
           </div>
           <div>
-            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Scriptwriter</h4>
-            <p class="text-xs text-slate-300 font-medium">Saima Khan <span class="text-slate-500 text-[10px]">(EMP-102)</span></p>
+            <h4 class="font-bold text-white text-base group-hover:text-indigo-400 transition">Scriptwriter</h4>
+            <p class="text-xs text-slate-300 font-medium">Saima Khan <span class="text-slate-500 text-[10px] font-code">(EMP-102)</span></p>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">Drafts engaging dialogues, commercial scripts, show outlines, and voiceover narratives.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Drafts engaging dialogues, commercial scripts, and voiceover narratives.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span><strong>Key Tool:</strong> ChatGPT / Gemini AI</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
+            <span><strong>Key Tool:</strong> ChatGPT / Gemini</span>
+            <span class="text-cyan-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
         <!-- Staff 3 -->
-        <div onclick="openStaffModal('Floor Producer / Manager', 'Hamza Tariq', 'EMP-103', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'hamza.floor@mediahouse.com', 'Studio Scheduler & Walkie Talkie', 'Manages studio schedules, equipment setup, guest hospitality, and live shooting.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <div onclick="openStaffModal('Floor Producer / Manager', 'Hamza Tariq', 'EMP-103', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'hamza.floor@mediahouse.com', 'Studio Scheduler & Walkie Talkie', 'Manages studio schedules and live shooting timelines.')" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer group">
           <div class="flex justify-between items-start">
-            <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl text-lg group-hover:scale-110 transition">
-              <i class="fa-solid fa-clapperboard"></i>
-            </div>
-            <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full font-semibold">Production Dept</span>
+            <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl text-lg group-hover:scale-110 transition"><i class="fa-solid fa-clapperboard"></i></div>
+            <span class="text-[9px] bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full font-bold font-code">Production Dept</span>
           </div>
           <div>
-            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Floor Producer / Manager</h4>
-            <p class="text-xs text-slate-300 font-medium">Hamza Tariq <span class="text-slate-500 text-[10px]">(EMP-103)</span></p>
+            <h4 class="font-bold text-white text-base group-hover:text-purple-400 transition">Floor Producer / Manager</h4>
+            <p class="text-xs text-slate-300 font-medium">Hamza Tariq <span class="text-slate-500 text-[10px] font-code">(EMP-103)</span></p>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">Manages studio schedules, equipment setup, guest hospitality, and live shooting timelines.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Manages studio schedules, equipment setup, guest hospitality, and live timelines.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> Studio Scheduler</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
+            <span class="text-cyan-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
         <!-- Staff 4 -->
-        <div onclick="openStaffModal('Camera Operator', 'Usman Ahmed', 'EMP-104', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'usman.cam@mediahouse.com', 'Sony FX9 / ARRI Studio Rig', 'Operates studio broadcast cameras, frames cinematic shots, and handles multi-angle.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <div onclick="openStaffModal('Camera Operator', 'Usman Ahmed', 'EMP-104', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'usman.cam@mediahouse.com', 'Sony FX9 / ARRI Studio Rig', 'Operates studio broadcast cameras.')" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer group">
           <div class="flex justify-between items-start">
-            <div class="p-3 bg-rose-500/10 text-rose-400 rounded-xl text-lg group-hover:scale-110 transition">
-              <i class="fa-solid fa-camera"></i>
-            </div>
-            <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full font-semibold">Production Dept</span>
+            <div class="p-3 bg-rose-500/10 text-rose-400 rounded-xl text-lg group-hover:scale-110 transition"><i class="fa-solid fa-camera"></i></div>
+            <span class="text-[9px] bg-rose-500/10 text-rose-400 px-2.5 py-1 rounded-full font-bold font-code">Production Dept</span>
           </div>
           <div>
-            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Camera Operator</h4>
-            <p class="text-xs text-slate-300 font-medium">Usman Ahmed <span class="text-slate-500 text-[10px]">(EMP-104)</span></p>
+            <h4 class="font-bold text-white text-base group-hover:text-rose-400 transition">Camera Operator</h4>
+            <p class="text-xs text-slate-300 font-medium">Usman Ahmed <span class="text-slate-500 text-[10px] font-code">(EMP-104)</span></p>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">Operates studio broadcast cameras, frames cinematic shots, and handles multi-angle coverage.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Operates studio broadcast cameras, frames cinematic shots, and handles multi-angle.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span><strong>Key Tool:</strong> Sony FX9 / ARRI Rig</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
+            <span><strong>Key Tool:</strong> Sony FX9 / ARRI</span>
+            <span class="text-cyan-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
         <!-- Staff 5 -->
-        <div onclick="openStaffModal('Audio Engineer', 'Bilal Hassan', 'EMP-105', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'bilal.audio@mediahouse.com', 'Soundcraft Mixing Console', 'Monitors live studio sound inputs, wireless mics, acoustic levels, and audio mixing.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <div onclick="openStaffModal('Audio Engineer', 'Bilal Hassan', 'EMP-105', 'Production Dept', 'Shift A (08:00 AM - 04:00 PM)', 'bilal.audio@mediahouse.com', 'Soundcraft Mixing Console', 'Monitors live studio sound inputs.')" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer group">
           <div class="flex justify-between items-start">
-            <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-lg group-hover:scale-110 transition">
-              <i class="fa-solid fa-microphone-lines"></i>
-            </div>
-            <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-full font-semibold">Production Dept</span>
+            <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-lg group-hover:scale-110 transition"><i class="fa-solid fa-microphone-lines"></i></div>
+            <span class="text-[9px] bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-full font-bold font-code">Production Dept</span>
           </div>
           <div>
-            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Audio Engineer</h4>
-            <p class="text-xs text-slate-300 font-medium">Bilal Hassan <span class="text-slate-500 text-[10px]">(EMP-105)</span></p>
+            <h4 class="font-bold text-white text-base group-hover:text-amber-400 transition">Audio Engineer</h4>
+            <p class="text-xs text-slate-300 font-medium">Bilal Hassan <span class="text-slate-500 text-[10px] font-code">(EMP-105)</span></p>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">Monitors live studio sound inputs, wireless mics, acoustic levels, and audio mixing.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Monitors live studio sound inputs, wireless mics, acoustic levels, and mixing.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> Soundcraft Console</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
+            <span class="text-cyan-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
 
         <!-- Staff 6 -->
-        <div onclick="openStaffModal('Lead Video Editor', 'Zainab Malik', 'EMP-106', 'Post-Production', 'Evening (02:00 PM - 10:00 PM)', 'zainab.edit@mediahouse.com', 'Adobe Premiere Pro & DaVinci', 'Assembles raw footages, cuts commercials, applies transitions, and finalizes cuts.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
+        <div onclick="openStaffModal('Lead Video Editor', 'Zainab Malik', 'EMP-106', 'Post-Production', 'Evening (02:00 PM - 10:00 PM)', 'zainab.edit@mediahouse.com', 'Adobe Premiere Pro & DaVinci', 'Assembles raw footages and cuts commercials.')" class="broadcast-panel p-6 rounded-2xl space-y-3 cursor-pointer group">
           <div class="flex justify-between items-start">
-            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl text-lg group-hover:scale-110 transition">
-              <i class="fa-solid fa-film"></i>
-            </div>
-            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-full font-semibold">Post-Production</span>
+            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl text-lg group-hover:scale-110 transition"><i class="fa-solid fa-film"></i></div>
+            <span class="text-[9px] bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-full font-bold font-code">Post-Production</span>
           </div>
           <div>
-            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Lead Video Editor</h4>
-            <p class="text-xs text-slate-300 font-medium">Zainab Malik <span class="text-slate-500 text-[10px]">(EMP-106)</span></p>
+            <h4 class="font-bold text-white text-base group-hover:text-emerald-400 transition">Lead Video Editor</h4>
+            <p class="text-xs text-slate-300 font-medium">Zainab Malik <span class="text-slate-500 text-[10px] font-code">(EMP-106)</span></p>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed">Assembles raw footages, cuts commercials, applies transitions, and finalizes cuts.</p>
           <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
             <span><strong>Key Tool:</strong> Premiere & DaVinci</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
+            <span class="text-cyan-400 font-semibold group-hover:underline">View Profile →</span>
           </div>
         </div>
-
-        <!-- Staff 7 -->
-        <div onclick="openStaffModal('VFX & Motion Designer', 'Fahad Mustafa', 'EMP-107', 'Post-Production', 'Evening (02:00 PM - 10:00 PM)', 'fahad.vfx@mediahouse.com', 'After Effects & Blender', 'Creates animated lower-thirds, brand logos, visual effects, and dynamic transitions.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
-          <div class="flex justify-between items-start">
-            <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl text-lg group-hover:scale-110 transition">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-full font-semibold">Post-Production</span>
-          </div>
-          <div>
-            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">VFX & Motion Designer</h4>
-            <p class="text-xs text-slate-300 font-medium">Fahad Mustafa <span class="text-slate-500 text-[10px]">(EMP-107)</span></p>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed">Creates animated lower-thirds, brand logos, visual effects, and dynamic transitions.</p>
-          <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span><strong>Key Tool:</strong> After Effects & Blender</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
-          </div>
-        </div>
-
-        <!-- Staff 8 -->
-        <div onclick="openStaffModal('Ad Sales & Sponsorship Mgr', 'Ayesha Bilal', 'EMP-108', 'Sales & Media', 'General (09:00 AM - 05:00 PM)', 'ayesha.sales@mediahouse.com', 'n8n CRM & Google Sheets', 'Negotiates ad slots, closes brand deals, and coordinates with automated lead systems.')" class="glass p-6 rounded-2xl border border-slate-800 space-y-3 cursor-pointer hover:border-blue-500/50 transition group">
-          <div class="flex justify-between items-start">
-            <div class="p-3 bg-rose-500/10 text-rose-400 rounded-xl text-lg group-hover:scale-110 transition">
-              <i class="fa-solid fa-bullhorn"></i>
-            </div>
-            <span class="text-[10px] bg-rose-500/10 text-rose-400 px-2.5 py-1 rounded-full font-semibold">Sales & Media</span>
-          </div>
-          <div>
-            <h4 class="font-bold text-white text-base group-hover:text-blue-400 transition">Ad Sales & Sponsorship Mgr</h4>
-            <p class="text-xs text-slate-300 font-medium">Ayesha Bilal <span class="text-slate-500 text-[10px]">(EMP-108)</span></p>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed">Negotiates ad slots, closes brand deals, and coordinates with automated lead systems.</p>
-          <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span><strong>Key Tool:</strong> n8n CRM & Sheets</span>
-            <span class="text-blue-400 font-semibold group-hover:underline">View Profile →</span>
-          </div>
-        </div>
-
       </div>
     </div>
 
-    <!-- PART 3: LIVE ACTIVE PRODUCTION TASKS BOARD -->
+    <!-- LIVE TASKS BOARD -->
     <div class="space-y-4 pt-6 border-t border-slate-800">
       <div class="flex justify-between items-center">
-        <h3 class="text-xl font-bold text-white flex items-center">
-          <i class="fa-solid fa-list-check text-emerald-400 mr-3"></i> Live Active Production Tasks Board
+        <h3 class="text-sm font-extrabold tracking-widest uppercase text-emerald-400 flex items-center font-code">
+          <i class="fa-solid fa-list-check mr-2"></i> Live Active Production Tasks Board
         </h3>
-        <button onclick="clearTasks()" class="text-xs text-slate-500 hover:text-red-400 transition"><i class="fa-solid fa-trash mr-1"></i> Clear Log</button>
+        <button onclick="clearTasks()" class="text-xs text-slate-500 hover:text-red-400 transition font-code"><i class="fa-solid fa-trash mr-1"></i> Clear Log</button>
       </div>
-
-      <div id="taskLogContainer" class="space-y-3">
-        <!-- Live tasks will append here -->
-      </div>
+      <div id="taskLogContainer" class="space-y-3"></div>
     </div>
 
   </main>
 
-  <!-- STAFF PROFILE & TASK MODAL POPUP -->
+  <!-- STAFF PROFILE MODAL -->
   <div id="staffModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
-    <div class="glass p-8 rounded-3xl max-w-lg w-full border border-slate-700 space-y-6 text-left">
+    <div class="broadcast-panel p-8 rounded-3xl max-w-lg w-full space-y-6 text-left">
       <div class="flex justify-between items-start border-b border-slate-800 pb-4">
         <div>
-          <span id="mDept" class="text-[10px] bg-blue-500/10 text-blue-400 px-2.5 py-0.5 rounded-full font-semibold">Department</span>
-          <h4 id="mName" class="text-xl font-bold text-white mt-1">Staff Name</h4>
-          <p id="mRole" class="text-xs text-blue-400 font-semibold">Designation</p>
+          <span id="mDept" class="text-[9px] bg-cyan-500/10 text-cyan-400 px-2.5 py-0.5 rounded-full font-bold font-code">Department</span>
+          <h4 id="mName" class="text-xl font-extrabold text-white mt-1">Staff Name</h4>
+          <p id="mRole" class="text-xs text-cyan-400 font-semibold">Designation</p>
         </div>
         <button onclick="closeStaffModal()" class="text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
-      <!-- Staff Details Grid -->
-      <div class="grid grid-cols-2 gap-4 text-xs">
+      <div class="grid grid-cols-2 gap-4 text-xs font-code">
         <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
-          <span class="text-slate-500 block text-[10px]">Employee ID</span>
+          <span class="text-slate-500 block text-[9px]">EMPLOYEE ID</span>
           <span id="mEmpId" class="text-slate-200 font-bold">EMP-000</span>
         </div>
         <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800">
-          <span class="text-slate-500 block text-[10px]">Shift Hours</span>
+          <span class="text-slate-500 block text-[9px]">SHIFT HOURS</span>
           <span id="mShift" class="text-slate-200 font-bold">Shift Details</span>
         </div>
         <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 col-span-2">
-          <span class="text-slate-500 block text-[10px]">Official Email</span>
-          <span id="mEmail" class="text-blue-400 font-semibold">email@mediahouse.com</span>
+          <span class="text-slate-500 block text-[9px]">OFFICIAL EMAIL</span>
+          <span id="mEmail" class="text-cyan-400 font-semibold">email@mediahouse.com</span>
         </div>
         <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 col-span-2">
-          <span class="text-slate-500 block text-[10px]">Key Software / Equipment</span>
+          <span class="text-slate-500 block text-[9px]">KEY SOFTWARE / HARDWARE</span>
           <span id="mTools" class="text-slate-200 font-semibold">Software list</span>
         </div>
       </div>
 
-      <!-- Assign New Task Section -->
       <div class="space-y-2 border-t border-slate-800 pt-4">
-        <label class="text-xs font-semibold text-slate-300">Assign New Project Task to this Member</label>
-        <textarea id="modalTaskInput" placeholder="e.g. Prepare script outline for Commercial Ad #4..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white outline-none focus:border-blue-500 h-20"></textarea>
+        <label class="text-xs font-semibold text-slate-300 font-code">Assign New Project Task</label>
+        <textarea id="modalTaskInput" placeholder="e.g. Prepare script outline..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white outline-none focus:border-cyan-500 h-20"></textarea>
       </div>
 
       <div class="flex space-x-3">
         <button onclick="closeStaffModal()" class="w-1/2 bg-slate-800 text-white py-3 rounded-xl text-xs font-semibold">Close</button>
-        <button onclick="saveTaskFromModal()" class="w-1/2 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-xs font-bold shadow-lg shadow-blue-600/30">Assign Task</button>
+        <button onclick="saveTaskFromModal()" class="w-1/2 bg-cyan-600 hover:bg-cyan-500 text-white py-3 rounded-xl text-xs font-bold shadow-lg shadow-cyan-600/30">Assign Task</button>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-900 px-8 py-4 text-center text-xs text-slate-500 mt-12">
-    AI Media Studio & Operations Suite &copy; 2026. Production & Staff Directory.
+  <footer class="border-t border-slate-900 px-8 py-4 text-center text-xs text-slate-500 font-code mt-12">
+    OPERATIONS_DIRECTORY // ACTIVE_SYSTEM // 2026
   </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
   <script>
     document.addEventListener("DOMContentLoaded", renderTasks);
-
-    let activeStaffRole = "";
-    let activeStaffName = "";
+    let activeStaffRole = "", activeStaffName = "";
 
     function togglePhase(pId) {
       const badge = document.getElementById('badge-' + pId);
       const bar = document.getElementById('bar-' + pId);
-      const card = document.getElementById('phase-' + pId);
-
       if (badge.innerText === 'PENDING') {
-        badge.innerText = 'IN PROGRESS';
-        badge.className = 'text-[10px] font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400';
-        bar.style.width = '60%';
-        card.style.borderColor = 'rgba(59, 130, 246, 0.5)';
+        badge.innerText = 'IN PROGRESS'; badge.className = 'text-[9px] font-bold px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-code'; bar.style.width = '60%';
       } else if (badge.innerText === 'IN PROGRESS') {
-        badge.innerText = 'COMPLETED';
-        badge.className = 'text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400';
-        bar.style.width = '100%';
-        card.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+        badge.innerText = 'COMPLETED'; badge.className = 'text-[9px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-code'; bar.style.width = '100%';
       } else {
-        badge.innerText = 'PENDING';
-        badge.className = 'text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400';
-        bar.style.width = '0%';
-        card.style.borderColor = 'rgba(30, 41, 59, 1)';
+        badge.innerText = 'PENDING'; badge.className = 'text-[9px] font-bold px-2 py-0.5 rounded bg-slate-900 text-slate-400 font-code'; bar.style.width = '0%';
       }
     }
 
-    function openStaffModal(role, name, empId, dept, shift, email, tools, desc) {
-      activeStaffRole = role;
-      activeStaffName = name;
-
+    function openStaffModal(role, name, empId, dept, shift, email, tools) {
+      activeStaffRole = role; activeStaffName = name;
       document.getElementById('mRole').innerText = role;
       document.getElementById('mName').innerText = name;
       document.getElementById('mEmpId').innerText = empId;
@@ -401,7 +316,6 @@
       document.getElementById('mShift').innerText = shift;
       document.getElementById('mEmail').innerText = email;
       document.getElementById('mTools').innerText = tools;
-
       document.getElementById('staffModal').classList.remove('hidden');
     }
 
@@ -412,47 +326,32 @@
 
     function saveTaskFromModal() {
       const text = document.getElementById('modalTaskInput').value.trim();
-
-      if (!text) {
-        alert("Task detail enter karein!");
-        return;
-      }
-
+      if (!text) { alert("Task detail enter karein!"); return; }
       const tasks = JSON.parse(localStorage.getItem("oura_operations_tasks") || "[]");
-      tasks.push({
-        id: Date.now(),
-        role: activeStaffRole,
-        name: activeStaffName,
-        detail: text,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      });
-
+      tasks.push({ id: Date.now(), role: activeStaffRole, name: activeStaffName, detail: text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) });
       localStorage.setItem("oura_operations_tasks", JSON.stringify(tasks));
-      renderTasks();
-      closeStaffModal();
+      renderTasks(); closeStaffModal();
     }
 
     function renderTasks() {
       const tasks = JSON.parse(localStorage.getItem("oura_operations_tasks") || "[]");
       const container = document.getElementById('taskLogContainer');
-
       if (tasks.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-500 italic p-4 bg-slate-900/40 rounded-xl border border-slate-900 text-center">No tasks assigned yet. Click any staff card above to view details & assign a task.</p>`;
+        container.innerHTML = `<p class="text-xs text-slate-500 italic p-4 bg-slate-900/40 rounded-xl border border-slate-900 text-center font-code">No active tasks. Click any staff card to assign a production task.</p>`;
         return;
       }
-
       container.innerHTML = tasks.map(t => `
-        <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl flex justify-between items-center text-xs space-x-4">
+        <div class="broadcast-panel p-4 rounded-xl flex justify-between items-center text-xs space-x-4">
           <div class="flex items-center space-x-3">
-            <span class="p-2 bg-blue-500/10 text-blue-400 rounded-lg font-bold"><i class="fa-solid fa-user-check"></i></span>
+            <span class="p-2 bg-cyan-500/10 text-cyan-400 rounded-lg font-bold"><i class="fa-solid fa-user-check"></i></span>
             <div>
-              <span class="text-blue-400 font-bold">${t.name}</span> <span class="text-slate-500">(${t.role})</span>
+              <span class="text-cyan-400 font-bold font-code">${t.name}</span> <span class="text-slate-500">(${t.role})</span>
               <p class="text-slate-200 mt-0.5">${t.detail}</p>
             </div>
           </div>
           <div class="flex items-center space-x-3">
-            <span class="text-[10px] text-slate-500">${t.time}</span>
-            <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold rounded-full">ACTIVE</span>
+            <span class="text-[10px] text-slate-500 font-code">${t.time}</span>
+            <span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 text-[9px] font-bold rounded font-code">ACTIVE</span>
             <button onclick="deleteTask(${t.id})" class="text-slate-600 hover:text-red-400 transition"><i class="fa-solid fa-xmark"></i></button>
           </div>
         </div>
